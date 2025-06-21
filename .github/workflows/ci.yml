@@ -16,7 +16,7 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run: |
-          pip install conan~=2.0 flake8 cpplint pytest
+          pip install conan flake8 cpplint pytest
       - name: Run cpplint
         run: |
           find . -path ./build -prune -o \( -name '*.cpp' -o -name '*.h' -o -name '*.cu' \) -print | xargs cpplint
