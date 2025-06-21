@@ -2,6 +2,7 @@ from conan import ConanFile
 from conan.tools.cmake import CMake
 from conan.tools.cmake import cmake_layout
 
+
 class CudaExampleConan(ConanFile):
     name = "cuda_example"
     version = "1.0"
@@ -18,4 +19,3 @@ class CudaExampleConan(ConanFile):
         cmake.configure()
         cmake.build()
         cmake.test()
-
