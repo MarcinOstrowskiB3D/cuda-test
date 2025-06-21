@@ -6,7 +6,7 @@ set(CMAKE_CUDA_STANDARD 17)
 set(CMAKE_CUDA_STANDARD_REQUIRED ON)
 
 add_library(add_lib src/add.cpp)
-target_include_directories(add_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(add_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 add_executable(cuda_example main.cu)
 target_link_libraries(cuda_example PRIVATE add_lib)
