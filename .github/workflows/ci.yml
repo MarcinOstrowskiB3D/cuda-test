@@ -19,7 +19,7 @@ jobs:
           pip install conan~=2.0 flake8 cpplint pytest
       - name: Run cpplint
         run: |
-          find . -name '*.cpp' -o -name '*.h' -o -name '*.cu' | xargs cpplint
+          find . -path ./build -prune -o \( -name '*.cpp' -o -name '*.h' -o -name '*.cu' \) -print | xargs cpplint
       - name: Run flake8
         run: |
           flake8 scripts tests
