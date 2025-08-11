@@ -1,13 +1,17 @@
-name: Cron job
-
-on:
+name: Experiment
+on: 
   schedule:
-    - cron: '* * * * *'
-  workflow_dispatch:
+  - cron: '*/5 * * * *'
+  - cron: '05 * * * *'
 
 jobs:
-  run-cron:
+  job1:
+    name: Debug
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - run: echo "Cron job running every minute"
+    - name: Git checkout
+      uses: actions/checkout@v4
+      with: { ref: main }
+    - name: List files
+      run: ls
